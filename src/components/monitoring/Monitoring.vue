@@ -1,8 +1,5 @@
 <template>
-  <panel
-    is-full-page=true
-    header='Dashboard' >
-
+  <panel is-full-page header='Dashboard'>
     <dashboard slot="body"></dashboard>
   </panel>
 </template>

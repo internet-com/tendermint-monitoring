@@ -6,7 +6,7 @@
       </p>
       <ul class="menu-list">
         <li v-for="(item, index) in generalMenu" :key="index">
-          <a>{{ capitalize(item) }}</a>
+          <a :class="{ 'is-active' : item === currentApp }">{{ capitalize(item) }}</a>
         </li>
       </ul>
 
@@ -15,7 +15,7 @@
       </p>
       <ul class="menu-list">
         <li v-for="(item, index) in detailMenu" :key="index">
-          <a>{{ capitalize(item) }}</a>
+          <a :class="{ 'is-active' : item === currentApp }">{{ capitalize(item) }}</a>
         </li>
       </ul>
     </aside>
@@ -30,17 +30,18 @@ export default {
       detailMenu: ['blocks', 'transactions', 'valudators'],
     };
   },
+  computed: {
+    currentApp() {
+      return this.$store.state.app;
+    },
+  },
   methods: {
     capitalize(str) {
       const strArray = str.split('-');
       for (let i = 0; i < strArray.length; i += 1) {
-        strArray[i] = this.upper(strArray[i]);
+        strArray[i] = strArray[i].charAt(0).toUpperCase().concat(strArray[i].substr(1));
       }
-
       return strArray.join(' ');
-    },
-    upper(str) {
-      return str.charAt(0).toUpperCase().concat(str.substr(1));
     },
   },
 };

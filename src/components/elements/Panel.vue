@@ -1,5 +1,5 @@
 <template>
-  <div class="panel" v-bind:class="{ 'is-full-page' : isFullPage }">
+  <div class="panel" :class="{ 'is-full-page' : isFullPage }">
     <div v-if="header" class="panel-header">
       <h1 class="title is-4">{{ header }}</h1>
     </div>
