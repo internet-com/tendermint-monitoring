@@ -19,9 +19,6 @@ export default{
     header: {
       type: String,
     },
-    action: {
-      type: String,
-    },
   },
 };
 </script>
@@ -30,19 +27,19 @@ export default{
 .panel {
   /* background-color: #FF0000; */
   /* background-color: #FAFAFA; */
-  border-radius: 0.286rem;
-  margin-bottom: 2.143rem;
+  /* border-radius: 0.286rem; */
+  margin: 0.7rem;
 }
 
 .panel-header {
-  padding: 1.3rem;
+  padding: 0.7rem;
 }
 
 .panel-body {
-  padding: 0 1.3rem 1.3rem 1.3rem;
+  padding: 0 0.7rem 0.7rem 0.7rem;
 }
 
 .is-full-page {
-  min-height: 90vh;
+  min-height: 100vh;
 }
 </style>

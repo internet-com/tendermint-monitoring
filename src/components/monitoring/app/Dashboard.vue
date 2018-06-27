@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="subtitle">I'm dashboard</h1>
+    <h1 class="subtitle">{{ $store.state }}</h1>
   </div>
 </template>
 

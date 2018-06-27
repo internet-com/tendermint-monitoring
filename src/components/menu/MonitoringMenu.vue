@@ -34,6 +34,10 @@ export default {};
   color: #afb8c3;
 }
 
+.menu-list li {
+  margin-bottom: 5px;
+}
+
 .is-active {
   background-color: hsl(171, 100%, 41%) !important;
   color: #FFFFFF !important;
