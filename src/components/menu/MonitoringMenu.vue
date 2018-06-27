@@ -19,7 +19,7 @@ export default {};
 
 <style scoped>
 .monitoring-menu {
-  padding: 0.7rem;
+  padding: 1.4rem 0.7rem 0.7rem 0.7rem;
 }
 
 .menu {
@@ -37,5 +37,9 @@ export default {};
 .is-active {
   background-color: hsl(171, 100%, 41%) !important;
   color: #FFFFFF !important;
+}
+
+a:hover {
+  color: #363636;
 }
 </style>

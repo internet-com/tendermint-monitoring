@@ -3,22 +3,18 @@
     is-full-page=true
     header='Dashboard' >
 
-    <div slot="body">
-      <div class="columns">
-        <div class="column">
-          <h1>I'm body</h1>
-        </div>
-      </div>
-    </div>
+    <dashboard slot="body"></dashboard>
   </panel>
 </template>
 
 <script>
 import Panel from '../elements/Panel';
+import Dashboard from './app/Dashboard';
 
 export default {
   components: {
     Panel,
+    Dashboard,
   },
 };
 </script>

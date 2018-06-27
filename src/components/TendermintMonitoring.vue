@@ -31,9 +31,8 @@ export default {
 }
 
 .side-menu {
-  position: relative;
   background-color: #293037;
-  box-shadow: 1px 0 2px 0 rgba(0,0,0,0.50);
+  box-shadow: 1px 0 0px 0 rgba(0,0,0,0.50);
   z-index: 100;
 }
 </style>

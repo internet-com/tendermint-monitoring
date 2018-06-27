@@ -29,7 +29,7 @@ export default{
 <style scoped>
 .panel {
   /* background-color: #FF0000; */
-  background-color: #FAFAFA;
+  /* background-color: #FAFAFA; */
   border-radius: 0.286rem;
   margin-bottom: 2.143rem;
 }
