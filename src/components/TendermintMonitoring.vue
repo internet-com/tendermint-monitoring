@@ -1,14 +1,12 @@
 <template>
   <div id="tm-monitoring">
-    <!-- <div class="container"> -->
-      <div class="columns is-gapless">
-        <div class="column is-2 side-menu">
-          <monitoring-menu></monitoring-menu>
-        </div>
-        <div class="column">
-          <monitoring></monitoring>
-        </div>
-      <!-- </div> -->
+    <div class="columns is-gapless">
+      <div class="column is-2 side-menu">
+        <monitoring-menu></monitoring-menu>
+      </div>
+      <div class="column">
+        <monitoring></monitoring>
+      </div>
     </div>
   </div>
 </template>
@@ -26,10 +24,6 @@ export default {
 </script>
 
 <style>
-#tm-monitoring {
-  /* padding: 1.3rem; */
-}
-
 .side-menu {
   background-color: #293037;
   box-shadow: 1px 0 0px 0 rgba(0,0,0,0.50);
