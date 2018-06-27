@@ -21,6 +21,7 @@ export default {
 <style scoped>
 .navbar {
   background-color: #293037;
+  /* background-color: rgb(56, 63, 70); */
 }
 
 .navbar-item {

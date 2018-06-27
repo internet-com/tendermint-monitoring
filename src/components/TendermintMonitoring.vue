@@ -39,7 +39,7 @@ export default {
 
 <style>
 .side-menu {
-  background-color: #293037;
+  background-color: #383f46;
   box-shadow: 1px 0 0px 0 rgba(0,0,0,0.50);
   z-index: 100;
 }
