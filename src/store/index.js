@@ -5,6 +5,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    app: 'dashboard',
+    app: null,
+  },
+  mutations: {
+    setApp(state, app) {
+      state.app = app;
+    },
   },
 });

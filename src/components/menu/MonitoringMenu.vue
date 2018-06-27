@@ -1,23 +1,20 @@
 <template>
   <div class="monitoring-menu">
     <aside class="menu">
-      <p class="menu-label">
-        General
-      </p>
-      <ul class="menu-list">
-        <li v-for="(item, index) in generalMenu" :key="index">
-          <a :class="{ 'is-active' : item === currentApp }">{{ capitalize(item) }}</a>
-        </li>
-      </ul>
-
-      <p class="menu-label">
-        Detail
-      </p>
-      <ul class="menu-list">
-        <li v-for="(item, index) in detailMenu" :key="index">
-          <a :class="{ 'is-active' : item === currentApp }">{{ capitalize(item) }}</a>
-        </li>
-      </ul>
+      <div v-for="(menuGroup, i) in menu" :key="i">
+        <p class="menu-label">
+          {{ menuGroup.name }}
+        </p>
+        <ul class="menu-list">
+          <li v-for="(item, index) in menuGroup.items" :key="index">
+            <a
+              v-on:click="setApp(item)"
+              :class="{ 'is-active' : item === currentApp }" >
+              {{ capitalize(item) }}
+            </a>
+          </li>
+        </ul>
+      </div>
     </aside>
   </div>
 </template>
@@ -26,8 +23,16 @@
 export default {
   data() {
     return {
-      generalMenu: ['dashboard', 'network-info', 'consensus-state'],
-      detailMenu: ['blocks', 'transactions', 'valudators'],
+      menu: [
+        {
+          name: 'General',
+          items: ['dashboard', 'network-info', 'consensus-state'],
+        },
+        {
+          name: 'Detail',
+          items: ['blocks', 'transactions', 'validators'],
+        },
+      ],
     };
   },
   computed: {
@@ -42,6 +47,9 @@ export default {
         strArray[i] = strArray[i].charAt(0).toUpperCase().concat(strArray[i].substr(1));
       }
       return strArray.join(' ');
+    },
+    setApp(app) {
+      this.$router.push({ path: app });
     },
   },
 };

@@ -16,9 +16,23 @@ import MonitoringMenu from './menu/MonitoringMenu';
 import Monitoring from './monitoring/Monitoring';
 
 export default {
+  props: ['app'],
   components: {
     MonitoringMenu,
     Monitoring,
+  },
+  watch: {
+    app() {
+      this.setApp(this.app);
+    },
+  },
+  methods: {
+    setApp(app) {
+      this.$store.commit('setApp', app);
+    },
+  },
+  mounted() {
+    this.setApp(this.app);
   },
 };
 </script>

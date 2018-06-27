@@ -10,6 +10,7 @@ export default new Router({
     {
       path: '/:app',
       component: TendermintMonitoring,
+      props: true,
     },
     {
       path: '/',
