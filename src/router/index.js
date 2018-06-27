@@ -9,6 +9,7 @@ export default new Router({
   routes: [
     {
       path: '/:app',
+      name: 'tendermint-monitoring',
       component: TendermintMonitoring,
       props: true,
     },

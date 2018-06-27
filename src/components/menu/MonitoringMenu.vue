@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import capitalize from '../../utils/Capitalize';
+
 export default {
   data() {
     return {
@@ -41,15 +43,9 @@ export default {
     },
   },
   methods: {
-    capitalize(str) {
-      const strArray = str.split('-');
-      for (let i = 0; i < strArray.length; i += 1) {
-        strArray[i] = strArray[i].charAt(0).toUpperCase().concat(strArray[i].substr(1));
-      }
-      return strArray.join(' ');
-    },
+    capitalize,
     setApp(app) {
-      this.$router.push({ path: app });
+      this.$router.push({ name: 'tendermint-monitoring', params: { app } });
     },
   },
 };
