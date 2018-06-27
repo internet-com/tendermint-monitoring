@@ -8,8 +8,12 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/:app',
       component: TendermintMonitoring,
+    },
+    {
+      path: '/',
+      redirect: '/dashboard',
     },
   ],
 });

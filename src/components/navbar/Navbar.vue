@@ -1,9 +1,10 @@
 <template>
-  <div class="nav-section">
+  <div>
     <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+      <h1 class="navbar-item title">Tendermint Monitoring</h1>
     </nav>
 
-    <hero></hero>
+    <!-- <hero></hero> -->
   </div>
 </template>
 
@@ -18,7 +19,12 @@ export default {
 </script>
 
 <style scoped>
-.nav-section {
-  margin-bottom: 60px;
+.navbar {
+  background-color: #293037;
 }
+
+.navbar-item {
+  color: #FFFFFF;
+}
+
 </style>

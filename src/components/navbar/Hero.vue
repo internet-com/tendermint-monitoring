@@ -6,7 +6,7 @@
           Tendermint Monitoring
         </h1>
         <h2 class="subtitle">
-          A tool for monitoring tendermint
+          A tool for monitoring blockchain network
         </h2>
       </div>
     </div>
