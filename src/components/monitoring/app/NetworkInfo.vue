@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tree-view :data="$store.state.status.export()"></tree-view>
+    <tree-view :data="$store.state.netInfo.export()"></tree-view>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
     TreeView,
   },
   mounted() {
-    this.$store.commit('fetchStatus');
+    this.$store.commit('fetchNetInfo');
   },
 };
 </script>

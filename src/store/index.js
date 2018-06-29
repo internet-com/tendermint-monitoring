@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     app: null,
     status: new TendermintData('/status'),
+    netInfo: new TendermintData('/net_info'),
   },
   mutations: {
     setApp(state, app) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     fetchStatus: async (state) => {
       await state.status.getData();
+    },
+    fetchNetInfo: async (state) => {
+      await state.netInfo.getData();
     },
   },
 });

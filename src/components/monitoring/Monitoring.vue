@@ -1,18 +1,21 @@
 <template>
   <panel is-full-page :header="capitalize(app)">
-    <dashboard slot="body"></dashboard>
+    <dashboard v-if="app === 'dashboard'" slot="body"></dashboard>
+    <network-info v-if="app === 'network-info'" slot="body"></network-info>
   </panel>
 </template>
 
 <script>
 import Panel from '../elements/Panel';
-import Dashboard from './app/Dashboard';
 import capitalize from '../../utils/Capitalize';
+import Dashboard from './app/Dashboard';
+import NetworkInfo from './app/NetworkInfo';
 
 export default {
   components: {
     Panel,
     Dashboard,
+    NetworkInfo,
   },
   computed: {
     app() {
