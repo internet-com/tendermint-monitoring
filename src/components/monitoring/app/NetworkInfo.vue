@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tree-view :data="$store.state.data.netInfo.export()"></tree-view>
+    <tree-view :data="$store.state.data.netInfo.getData()"></tree-view>
   </div>
 </template>
 

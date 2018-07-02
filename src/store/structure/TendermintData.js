@@ -20,7 +20,7 @@ class TendermintData {
     }
   }
 
-  export() {
+  getData() {
     return this.data;
   }
 }

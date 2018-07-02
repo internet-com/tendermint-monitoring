@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tree-view :data="$store.state.data.validators.export()"></tree-view>
+    <tree-view :data="$store.state.data.validators.getData()"></tree-view>
   </div>
 </template>
 
