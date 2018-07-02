@@ -5,15 +5,7 @@
 </template>
 
 <script>
-import TreeView from 'vue-json-tree-view';
-import Vue from 'vue';
-
-Vue.use(TreeView);
-
 export default {
-  conponents: {
-    TreeView,
-  },
   computed: {
     data() {
       return this.$store.state.data.status.getData();
