@@ -32,7 +32,7 @@ export default{
 }
 
 .panel-header {
-  padding: 0.7rem;
+  padding: 0.7rem 0.7rem 1.4rem 0.7rem;
 }
 
 .panel-body {
