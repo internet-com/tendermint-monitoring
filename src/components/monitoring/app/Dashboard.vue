@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tree-view :data="$store.state.status.export()"></tree-view>
+    <tree-view :data="$store.state.data.status.export()"></tree-view>
   </div>
 </template>
 
@@ -13,9 +13,6 @@ Vue.use(TreeView);
 export default {
   conponents: {
     TreeView,
-  },
-  mounted() {
-    this.$store.commit('fetchStatus');
   },
 };
 </script>

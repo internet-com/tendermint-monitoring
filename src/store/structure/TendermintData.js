@@ -6,14 +6,12 @@ class TendermintData {
     this.url = url;
   }
 
-  async getData() {
+  async fetchData() {
     let response;
     try {
       response = await axios.get(this.url);
       if (response.data) {
         if (response.data.result) this.data = response.data.result;
-        // eslint-disable-next-line
-        console.log(this.data);
       }
     } catch (err) {
       this.data = null;

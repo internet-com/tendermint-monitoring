@@ -1,24 +1,38 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import TendermintData from './structure/TendermintData';
+import fetchDataInterval from '../utils/FetchDataInterval';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     app: null,
-    status: new TendermintData('/status'),
-    netInfo: new TendermintData('/net_info'),
+    data: {
+      status: new TendermintData('/status'),
+      netInfo: new TendermintData('/net_info'),
+      consensusState: new TendermintData('dump_consensus_state'),
+    },
   },
   mutations: {
     setApp(state, app) {
       state.app = app;
     },
-    fetchStatus: async (state) => {
-      await state.status.getData();
+    fetchData: async (state) => {
+      Object.keys(state.data).forEach((key) => {
+        if (Object.prototype.hasOwnProperty.call(state.data, key)) {
+          fetchDataInterval(state.data[key]);
+        }
+      });
     },
-    fetchNetInfo: async (state) => {
-      await state.netInfo.getData();
+  },
+  actions: {
+    autoFetchData: async ({ commit }) => {
+      // eslint-disable-next-line
+      while (true) {
+        // eslint-disable-next-line
+        await commit('fetchData');
+      }
     },
   },
 });
