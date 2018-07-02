@@ -26,13 +26,4 @@ export default new Vuex.Store({
       });
     },
   },
-  actions: {
-    autoFetchData: async ({ commit }) => {
-      // eslint-disable-next-line
-      while (true) {
-        // eslint-disable-next-line
-        await commit('fetchData');
-      }
-    },
-  },
 });

@@ -34,7 +34,6 @@ export default {
   mounted() {
     this.setApp(this.app);
     this.$store.commit('fetchData');
-    // this.$store.dispatch('autoFetchData');
   },
 };
 </script>
