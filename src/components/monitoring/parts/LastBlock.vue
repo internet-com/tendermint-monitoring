@@ -2,7 +2,7 @@
   <div :class="['column', sizeClass]">
     <box :header="'Latest Block'">
       <div class="box-content" slot="content">
-        <p>Height: {{ latestBlockHeight }}</p>
+        <p>Height: {{ latestBlock.height }}</p>
         <p>{{ latestBlockTime }}</p>
       </div>
     </box>
@@ -17,7 +17,7 @@ export default {
   props: {
     size: {
       type: Number,
-      default: 3,
+      default: 4,
     },
   },
   components: {
@@ -27,33 +27,12 @@ export default {
     sizeClass() {
       return `is-${this.size}`;
     },
-    data() {
-      return this.$store.state.data.status.getData();
-    },
-    syncInfo() {
-      if (this.data) {
-        return this.data.sync_info;
-      }
-
-      return null;
-    },
-    latestBlockHeight() {
-      if (this.syncInfo) {
-        return this.syncInfo.latest_block_height;
-      }
-
-      return NaN;
-    },
-    latestMoment() {
-      if (this.syncInfo) {
-        return moment(this.syncInfo.latest_block_time);
-      }
-
-      return null;
+    latestBlock() {
+      return this.$store.getters.latestBlock;
     },
     latestBlockTime() {
-      if (this.latestMoment) {
-        return this.latestMoment.fromNow();
+      if (this.latestBlock) {
+        return moment(this.latestBlock.time).fromNow();
       }
 
       return NaN;

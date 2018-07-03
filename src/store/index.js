@@ -15,8 +15,28 @@ export default new Vuex.Store({
       validators: new TendermintData('/validators'),
     },
   },
+  getters: {
+    latestBlock: (state) => {
+      if (state.data.status.getData()) {
+        const data = state.data.status.getData();
+        const latestBlock = {
+          height: data.sync_info.latest_block_height,
+          hash: data.sync_info.latest_block_hash,
+          time: data.sync_info.latest_block_time,
+        };
+
+        return latestBlock;
+      }
+
+      return {
+        height: NaN,
+        hash: NaN,
+        time: NaN,
+      };
+    },
+  },
   mutations: {
-    setApp(state, app) {
+    setApp: (state, app) => {
       state.app = app;
     },
     fetchData: async (state) => {

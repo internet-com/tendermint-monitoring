@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="columns">
-      <last-block></last-block>
+      <last-block :size="4"></last-block>
     </div>
     <!-- cols -->
     <div class="columns">
