@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="columns">
-      <div class="column is-3">
-        <last-block></last-block>
-      </div>
+      <last-block></last-block>
     </div>
     <!-- cols -->
     <div class="columns">

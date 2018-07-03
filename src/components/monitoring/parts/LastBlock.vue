@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <box></box>
+  <div :class="['column', sizeClass]">
+    <box :header="'Latest Block'">
+      <div slot="content">
+        {{ syncInfo }}
+      </div>
+    </box>
   </div>
 </template>
 
@@ -8,13 +12,32 @@
 import Box from '../../elements/Box';
 
 export default {
+  props: {
+    size: {
+      type: Number,
+      default: 3,
+    },
+  },
   components: {
     Box,
   },
   computed: {
+    data() {
+      return this.$store.state.data.status.getData();
+    },
+    sizeClass() {
+      return `is-${this.size}`;
+    },
     syncInfo() {
-      return this.$store.state.data.status.getData().sync_info;
+      if (this.data) {
+        return this.data.sync_info;
+      }
+
+      return null;
     },
   },
 };
 </script>
+
+<style scoped>
+</style>
