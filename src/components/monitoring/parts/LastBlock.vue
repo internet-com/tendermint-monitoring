@@ -1,14 +1,16 @@
 <template>
   <div :class="['column', sizeClass]">
     <box :header="'Latest Block'">
-      <div slot="content">
-        {{ syncInfo }}
+      <div class="box-content" slot="content">
+        <p>Height: {{ latestBlockHeight }}</p>
+        <p>{{ latestBlockTime }}</p>
       </div>
     </box>
   </div>
 </template>
 
 <script>
+import moment from 'moment';
 import Box from '../../elements/Box';
 
 export default {
@@ -22,11 +24,11 @@ export default {
     Box,
   },
   computed: {
-    data() {
-      return this.$store.state.data.status.getData();
-    },
     sizeClass() {
       return `is-${this.size}`;
+    },
+    data() {
+      return this.$store.state.data.status.getData();
     },
     syncInfo() {
       if (this.data) {
@@ -35,9 +37,34 @@ export default {
 
       return null;
     },
+    latestBlockHeight() {
+      if (this.syncInfo) {
+        return this.syncInfo.latest_block_height;
+      }
+
+      return NaN;
+    },
+    latestMoment() {
+      if (this.syncInfo) {
+        return moment(this.syncInfo.latest_block_time);
+      }
+
+      return null;
+    },
+    latestBlockTime() {
+      if (this.latestMoment) {
+        return this.latestMoment.fromNow();
+      }
+
+      return NaN;
+    },
   },
 };
 </script>
 
-<style scoped>
+<style>
+.box-content {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 </style>

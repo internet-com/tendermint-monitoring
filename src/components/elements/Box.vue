@@ -2,7 +2,7 @@
   <div class="box has-background-primary has-text-white">
     <div class="monitoring-content">
       <p class="box-header title is-3 has-text-white">{{ header }}</p>
-      <slot name="content"></slot>
+      <slot name="content" class="has-text-white"></slot>
     </div>
   </div>
 </template>
