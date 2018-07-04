@@ -14,6 +14,7 @@ export default new Vuex.Store({
       netInfo: new TendermintData('/net_info'),
       consensusState: new TendermintData('dump_consensus_state'),
       validators: new TendermintData('/validators'),
+      blocks: new TendermintData('/block'),
     },
   },
   getters,

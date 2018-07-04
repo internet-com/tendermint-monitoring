@@ -16,6 +16,16 @@ const getters = {
 
     return latestBlock;
   },
+  numTxs: (state) => {
+    let numTxs = NaN;
+
+    if (state.data.blocks.getData()) {
+      const data = state.data.blocks.getData();
+      numTxs = data.block_meta.header.total_txs;
+    }
+
+    return numTxs;
+  },
 };
 
 export default getters;
